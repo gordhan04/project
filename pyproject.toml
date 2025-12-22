@@ -1,0 +1,18 @@
+[project]
+name = "rag-annual-report-analyst"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "docling>=2.65.0",
+    "dotenv>=0.9.9",
+    "langchain-chroma>=1.1.0",
+    "langchain-classic>=1.0.0",
+    "langchain-docling>=2.0.0",
+    "langchain-groq>=1.1.1",
+    "langchain-huggingface>=1.2.0",
+    "python-dotenv>=1.2.1",
+    "streamlit>=1.52.2",
+    "tiktoken>=0.12.0",
+]

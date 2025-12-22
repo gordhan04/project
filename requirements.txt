@@ -1,0 +1,10 @@
+streamlit
+langchain-groq
+langchain-huggingface
+langchain-chroma
+langchain-docling
+docling
+python-dotenv
+tiktoken
+dotenv
+langchain-classic
