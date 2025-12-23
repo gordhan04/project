@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-st.set_page_config(page_title="Annual Report Analyst", layout="wide")
+st.set_page_config(page_title="Company Annual Report Analyst", layout="wide")
 st.title("📊 Annual Report Analyst (India/US)")
 
 # Sidebar for Setup

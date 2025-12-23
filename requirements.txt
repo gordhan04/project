@@ -8,3 +8,6 @@ python-dotenv
 tiktoken
 dotenv
 langchain-classic
+pdfplumber
+langchain-community
+sentence_transformers

@@ -8,8 +8,7 @@ load_dotenv()
 if not os.getenv("GROQ_API_KEY"):
     raise ValueError("GROQ_API_KEY not found. Please check your .env file.")
 
-from langchain_docling.loader import DoclingLoader
-from langchain_docling.loader import ExportType
+from langchain_community.document_loaders import PDFPlumberLoader
 from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
@@ -21,10 +20,9 @@ from langchain_core.prompts import ChatPromptTemplate
 # 1. Load and Process Document with Docling
 def process_document_to_chroma(uploaded_file_path):
     # Docling is powerful: It converts PDF tables to Markdown tables automatically
-    loader = DoclingLoader(
-        file_path=uploaded_file_path,
-        export_type=ExportType.MARKDOWN
-    )
+    
+    loader = PDFPlumberLoader(uploaded_file_path)
+
     
     docs = loader.load()
     
@@ -59,7 +57,7 @@ def process_document_to_chroma(uploaded_file_path):
 # 4. Create the Chat Chain
 def get_rag_chain(vectorstore):
     llm = ChatGroq(
-        model="llama3-70b-8192",  # Strong reasoning model for finance
+        model="llama-3.1-8b-instant",  # Strong reasoning model for finance
         temperature=0
     )
     
